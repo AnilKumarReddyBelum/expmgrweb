@@ -5,7 +5,7 @@
 
 	<groupId>com.notify.app.services</groupId>
 	<artifactId>notify</artifactId>
-	<version>1.01</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>notify</name>

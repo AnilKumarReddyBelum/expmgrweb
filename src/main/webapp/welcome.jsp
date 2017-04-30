@@ -47,7 +47,7 @@
 	href="${contextPath}/resources/js/libs/bootstrap/dist/css/bootstrap.min.css"
 	rel="stylesheet"> --%>
 <link
-	href="${contextPath}/resources/js/libs//metisMenu/dist/metisMenu.min.css"
+	href="${contextPath}/resources/js/libs/metisMenu/src/metisMenu.css"
 	rel="stylesheet">
 <link href="${contextPath}/resources/css/timeline.css" rel="stylesheet">
 <link href="${contextPath}/resources/css/sb-admin-2.css"

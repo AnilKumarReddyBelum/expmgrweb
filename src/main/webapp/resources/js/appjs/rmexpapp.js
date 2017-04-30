@@ -10,4 +10,10 @@ roomExpApp.config([ '$httpProvider', function($httpProvider) {
 roomExpApp.run([ '$http', function($http) {
 	$http.defaults.headers.post[header] = token;
 	$http.defaults.headers.put[header] = token;
+	$http.defaults.headers.get[header] = token;
+	$http.defaults.headers.delete[header] = token;
+	$http.defaults.headers.tarce[header] = token;
+	$http.defaults.headers.head[header] = token;
+	$http.defaults.headers.options[header] = token;
+	$http.defaults.headers.connect[header] = token;
 } ]);

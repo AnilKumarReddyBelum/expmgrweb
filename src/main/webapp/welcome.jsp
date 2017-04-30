@@ -180,9 +180,9 @@
 	<script
 		src="${contextPath}/resources/js/libs/angular/angular-route.min.js"></script>
 	<script
-		src="${contextPath}/resources/js/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+		src="${contextPath}/resources/js/bootstrap.min.js"></script>
 	<script
-		src="${contextPath}/resources/js/libs/metisMenu/dist/metisMenu.min.js"></script>
+		src="${contextPath}/resources/js/libs/metisMenu/src/metisMenu.js"></script>
 	<script src="${contextPath}/resources/js/libs/sb-admin-2/sb-admin-2.js"></script>
 	<script src="${contextPath}/resources/js/jquery.dataTables.min.js"></script>
 

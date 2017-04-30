@@ -14,7 +14,7 @@ public class CustomizationBean implements EmbeddedServletContainerCustomizer {
     @SuppressWarnings("deprecation")
 	@Override
     public void customize(ConfigurableEmbeddedServletContainer container) {
-        container.setPort(9000);
-        container.addErrorPages(new ErrorPage(HttpStatus.UNAUTHORIZED, Url.UNAUTHORIZED_PAGE));   
+        //container.setPort(9000);
+       // container.addErrorPages(new ErrorPage(HttpStatus.UNAUTHORIZED, Url.UNAUTHORIZED_PAGE));   
     }
 }

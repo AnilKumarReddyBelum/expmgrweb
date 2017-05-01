@@ -54,7 +54,7 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 	
 	$scope.deleteItem = function(item) {
 		   $http({
-		     method : 'DELETE',
+		     method : 'POST',
 		     url : '/menu/items/deleteMenu',
 		     data : angular.toJson(item),
 		     headers : {

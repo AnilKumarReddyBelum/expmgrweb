@@ -29,7 +29,7 @@ public class MenuRestController {
 		return menuRep.save(menuBean);
 	}
 
-	@DeleteMapping(value = "/menu/items/deleteMenu")
+	@PostMapping(value = "/menu/items/deleteMenu")
 	public void deleteMenu(@RequestBody MenuBean menuBean) {
 		menuRep.delete(menuBean);
 	}

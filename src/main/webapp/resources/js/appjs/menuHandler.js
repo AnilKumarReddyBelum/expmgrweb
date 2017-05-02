@@ -4,15 +4,29 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 	$scope.user = username;
 
 	$scope.items = [];
+	
+	function formatDate(date) {
+	    var d = new Date(date),
+	        month = '' + (d.getMonth() + 1),
+	        day = '' + d.getDate(),
+	        year = d.getFullYear();
+
+	    if (month.length < 2) month = '0' + month;
+	    if (day.length < 2) day = '0' + day;
+
+	    return [year, month, day].join('-');
+	}
+
 
 	$scope.item = {
-		itemId : "-1",
-		itemDescription : "",
-		itemName : "",
-		itemPrice : "",
-		active : "",
-		available : "",
-		username : username
+		itemId : undefined,
+		itemDescription : undefined,
+		itemName : undefined,
+		itemPrice : undefined,
+		username : username,
+		createdDate : formatDate(new Date()),
+		active : undefined,
+		available:undefined 
 	};
 
 	loadingTheMenuItems();

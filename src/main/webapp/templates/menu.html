@@ -53,6 +53,7 @@
 				<th>Item Name</th>
 				<th>Item Price</th>
 				<th>Item Description</th>
+				<th>Item Creation Date</th>
 				<th>Actions</th>
 			</tr>
 
@@ -61,6 +62,7 @@
 				<td>{{ item.itemName }}</td>
 				<td>{{ item.itemPrice }}</td>
 				<td>{{ item.itemDescription }}</td>
+				<td>{{ item.createdDate }}</td>
 				<td><a ng-click="editItem(item)" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i>&nbsp;Edit</a>
 				 <a ng-click="deleteItem(item)" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a></td>
 			</tr>

@@ -32,6 +32,10 @@ public class MenuBean implements Serializable {
 	private Long restaurantId;
 	@Column
 	private String restaurantName;
+	@Column
+	private Boolean available;
+	@Column
+	private String username;
 
 	public String getRestaurantName() {
 		return restaurantName;
@@ -48,12 +52,6 @@ public class MenuBean implements Serializable {
 	public void setUpdateDate(String updateDate) {
 		this.updateDate = updateDate;
 	}
-
-	@Column
-	private Boolean available;
-
-	@Column
-	private String username;
 
 	public String getUsername() {
 		return username;

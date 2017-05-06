@@ -42,7 +42,7 @@
         
         <spring:bind path="restaurantId">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="restaurantId" class="form-control" placeholder="RestaurantId"
+                <form:input type="number" path="restaurantId" class="form-control" placeholder="RestaurantId"
                             autofocus="true"></form:input>
                 <form:errors path="restaurantId"></form:errors>
             </div>

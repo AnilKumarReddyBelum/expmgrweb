@@ -24,8 +24,8 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 		itemPrice : undefined,
 		username : username,
 		createdDate : formatDate(new Date()),
-		active : undefined,
-		available:undefined,
+		active : false,
+		available:false,
 		updateDate : undefined,
 		restaurantId : undefined,
 		restaurantName : undefined

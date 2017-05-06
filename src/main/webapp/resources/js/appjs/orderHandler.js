@@ -93,14 +93,11 @@ roomExpApp.controller("ordersController", function($scope, $http) {
 		$scope.order.orderId = undefined;
 		$scope.order.tokenId = undefined;
 		$scope.order.customerId = undefined;
-		//$scope.order.restaurantId = order.restaurantId;
 		$scope.order.orderDetails = undefined;
 		$scope.order.createdDate = undefined;
-		//$scope.order.modifiedDate = formatDate(new Date());
 		$scope.order.orderDate = undefined;
 		$scope.order.orderAccept = undefined;
 		$scope.order.activeOrder = undefined;
-		//$scope.order.username = order.username;
 	}
 
 });

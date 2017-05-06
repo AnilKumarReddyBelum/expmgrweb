@@ -32,6 +32,10 @@ public class OrderBean implements Serializable {
 	private Long restaurantId;//AUTO POPULATION
 	@Column
 	private String restaurantName;//AUTO POPULATION
+	public Long getRestaurantId() {
+		return restaurantId;
+	}
+
 	@Column
 	private String orderDate;//NOT REQUIRED FROM UI-HTM
 	@Column

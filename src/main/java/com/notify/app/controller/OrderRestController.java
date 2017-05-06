@@ -29,15 +29,16 @@ public class OrderRestController {
 	}
 
 	@PostMapping(value = "/order/createOrder")
-	public OrderBean saveMenu(@RequestBody OrderBean orderBean) {
+	public OrderBean createUpdateOrder(@RequestBody OrderBean orderBean) {
 		final User user = userRepository.findByUsername(getLoggedInUserName());
 		orderBean.setRestaurantId(user.getRestaurantId());
 		orderBean.setRestaurantName(user.getProfile().getRestaurantName());
-		return orderRep.save(orderBean);
+		orderBean = orderRep.save(orderBean);
+		return orderBean;
 	}
 
 	@PostMapping(value = "/order/deleteOrder")
-	public void deleteMenu(@RequestBody OrderBean orderBean) {
+	public void deleteOrder(@RequestBody OrderBean orderBean) {
 		orderRep.delete(orderBean);
 	}
 

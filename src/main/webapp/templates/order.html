@@ -17,7 +17,7 @@
 
 
 				<div class="form-group input-group">
-				<span class="input-group-addon"><div class="glyphicon glyphicon-edit"></div></span> 
+				<span class="input-group-addon"><div class="glyphicon glyphicon-book"></div></span> 
 					<input type="text" id="itemDescription"
 						ng-model="order.orderDetails" size="30" class="form-control"
 						placeholder="Order Details" autofocus="autofocus" />
@@ -43,7 +43,7 @@
 
              <div align="center">
 				<button class="btn btn-success" ng-click="addOrder();">
-					<i class="glyphicon glyphicon-edit icon-white"></i> Update Order
+					<i class="glyphicon glyphicon-book icon-white"></i> Update Order
 				</button> <br/>
 			</div>
 			<br/>
@@ -55,7 +55,6 @@
 		<table class="table table-bordered">
 			<tr>
 				<th>OrderId</th>
-				<!-- <th>UserName</th> -->
 				<th>TokenId</th>
 				<th>CustomerId</th>
 				<th>OrderDetails</th>
@@ -71,7 +70,6 @@
 
 			<tr ng-repeat="order in orders">
 				<td>{{ order.orderId}}</td>
-				<!-- <td>{{ order.username }}</td> --> 
 				<td>{{ order.tokenId }}</td>
 				<td>{{ order.customerId }}</td>
 				<td>{{ order.orderDetails }}</td>
@@ -91,7 +89,7 @@
 
 	<br />
 </div>
-
+</div>
 
 
 

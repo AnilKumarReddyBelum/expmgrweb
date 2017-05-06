@@ -144,9 +144,9 @@
 						<li><a href="#order"><i class="fa fa-book fa-fw"></i>
 								Order</a></li>
 
-						<!-- 	<li><a href="#notify"><i class="fa fa-bell fa-fw"></i>
+						<li><a href="#notify"><i class="fa fa-bell fa-fw"></i>
 								Notify</a></li>
-								 -->
+								
 
 
 						<li><a href="#release"><i
@@ -209,6 +209,11 @@
 		src="${contextPath}/resources/js/appjs/releaseVersionController.js"></script>
 <script type="text/javascript"
 		src="${contextPath}/resources/js/appjs/orderHandler.js"></script>
+
+<script type="text/javascript"
+		src="${contextPath}/resources/js/appjs/notificationController.js"></script>
+
+
 
 
 

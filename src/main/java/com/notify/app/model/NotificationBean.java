@@ -10,68 +10,88 @@ import javax.persistence.Id;
 
 @Entity
 public class NotificationBean implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer notificationId;
+	private Integer notificationId;// AUTO GENERATION
 	@Column
-	private String messages;
+	private String message;
 	@Column
 	private String createdDate;
 	@Column
 	private String modifiedDate;
 	@Column
-	private String estimationTime;
+	private Integer estimationTime;
 	@Column
-	private String active;
+	private Boolean active;
 	@Column
 	private String orderId;
-	
-	
+	@Column
+	private String username;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public String getCreatedDate() {
 		return createdDate;
 	}
+
 	public void setCreatedDate(String createdDate) {
 		this.createdDate = createdDate;
 	}
+
 	public String getModifiedDate() {
 		return modifiedDate;
 	}
+
 	public void setModifiedDate(String modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
+
 	public Integer getNotificationId() {
 		return notificationId;
 	}
+
 	public void setNotificationId(Integer notificationId) {
 		this.notificationId = notificationId;
 	}
-	public String getMessages() {
-		return messages;
+
+	public String getMessage() {
+		return message;
 	}
-	public void setMessages(String messages) {
-		this.messages = messages;
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
-	public String getEstimationTime() {
+
+	public Integer getEstimationTime() {
 		return estimationTime;
 	}
-	public void setEstimationTime(String estimationTime) {
+
+	public void setEstimationTime(Integer estimationTime) {
 		this.estimationTime = estimationTime;
 	}
-	public String getActive() {
+
+	public Boolean getActive() {
 		return active;
 	}
-	public void setActive(String active) {
+
+	public void setActive(Boolean active) {
 		this.active = active;
 	}
+
 	public String getOrderId() {
 		return orderId;
 	}
+
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
 	}
-	
+
 }

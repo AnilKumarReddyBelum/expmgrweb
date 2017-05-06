@@ -1,71 +1,74 @@
 
 
 <br />
-<div class="generic-container" ng-controller="menuItemsController"
-	>
-	<div class="panel panel-default" style="width: 58%;">
+<div class="generic-container" ng-controller="notificatonManagerController">
+	<div class="panel panel-default">
 		<div class="panel-heading">
-			<span class="lead">Menu</span>
+			<span class="lead">Notifications</span>
 		</div>
+		<div class="panel-body">
 		<form>
 		<br/>
 			<div class="tablecontainer">
 
 
 				<div class="form-group input-group">
-				<span class="input-group-addon"><div class="glyphicon glyphicon-edit"></div></span> 
-					<input type="text" id="itemDescription"
-						ng-model="item.itemDescription" size="30" class="form-control"
-						placeholder="Item Description" autofocus="autofocus" />
+				<span class="input-group-addon"><div class="glyphicon glyphicon-comment"></div></span> 
+					<input type="text" id="message"
+						ng-model="notification.message" size="30" class="form-control"
+						placeholder="Notification Message Description" autofocus="autofocus" />
 				</div>
 
 				<div class="form-group input-group">
-				<span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span> 
-					<input type="text" id="itemName" ng-model="item.itemName" size="30"
-						class="form-control" placeholder="Item Name" />
+				<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span> 
+					<input type="number" id="estimationTime" ng-model="notification.estimationTime" size="2"
+						class="form-control" placeholder="EstimationTime In Minutes" />
 				</div>
 
-				<div class="form-group input-group">
-				<span class="input-group-addon"><div class="fa fa-inr"></div></span> 
-					<input type="number" id="itemPrice" ng-model="item.itemPrice"
-						size="30" class="form-control" placeholder="Item Price" /><span
-									class="input-group-addon">.00</span>
+				<div class="form-group input-group" align="center">
+				<div><input type="checkbox" id="active" name="active" ng-model="notification.active" ng-checked="false">&nbsp;&nbsp;Active Notification</div>
 				</div>
 
              <div align="center">
-				<button class="btn btn-success" ng-click="addItem();">
-					<i class="glyphicon glyphicon-edit icon-white"></i> Update Menu
+				<button class="btn btn-success" ng-click="addNotification();">
+					<i class="glyphicon glyphicon-comment icon-white"></i> Update Notification
 				</button> <br/>
 			</div>
 			<br/>
 			</div>
 		</form>
-	</div>
-	<h3>Menu List</h3>
+		</div>
+	<div class="panel-footer">
 	<div class="table-responsive">
-		<table class="table table-bordered" style="width: 700px">
+		<table class="table table-bordered">
 			<tr>
-				<th>Item Id</th>
-				<th>Item Name</th>
-				<th>Item Price</th>
-				<th>Item Description</th>
+				<th>NotificationId</th>
+				<th>NotificationMessageDetails</th>
+				<th>NotificationCreatedDate</th>
+				<th>NotificationModifiedDate</th>
+				<th>EstimationTime</th>
+				<th>OrderId</th>
+				<th>Active</th>
 				<th>Actions</th>
 			</tr>
 
-			<tr ng-repeat="item in items">
-				<td>{{ item.itemId}}</td>
-				<td>{{ item.itemName }}</td>
-				<td>{{ item.itemPrice }}</td>
-				<td>{{ item.itemDescription }}</td>
-				<td><a ng-click="editItem(item)" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i>&nbsp;Edit</a>
-				 <a ng-click="deleteItem(item)" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a></td>
+			<tr ng-repeat="notification in notifications">
+				<td>{{ notification.notificationId}}</td>
+				<td>{{ notification.message }}</td>
+				<td>{{ notification.createdDate }}</td>
+				<td>{{ notification.modifiedDate }}</td>
+				<td>{{ notification.estimationTime }}</td>
+				<td>{{ notification.orderId }}</td>
+				<td>{{ notification.active }}</td>
+				<td><a ng-click="editNotification(notification)" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+				 <a ng-click="deleteNotification(notification)" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a></td>
 			</tr>
 		</table>
 	</div>
 
 	<br />
 </div>
-
+</div>
 
 
 

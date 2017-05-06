@@ -1,12 +1,16 @@
 
 
 <br />
-<div class="generic-container" ng-controller="ordersController"
-	>
-	<div class="panel panel-default" style="width: 58%;">
+<div class="generic-container" ng-controller="ordersController">
+
+
+	<div class="panel panel-default" style="width: 100%;">
+	
 		<div class="panel-heading">
 			<span class="lead">Order</span>
 		</div>
+		
+		<div class="panel-body">
 		<form>
 		<br/>
 			<div class="tablecontainer">
@@ -15,11 +19,11 @@
 				<div class="form-group input-group">
 				<span class="input-group-addon"><div class="glyphicon glyphicon-edit"></div></span> 
 					<input type="text" id="itemDescription"
-						ng-model="item.itemDescription" size="30" class="form-control"
-						placeholder="Item Description" autofocus="autofocus" />
+						ng-model="order.orderDetails" size="30" class="form-control"
+						placeholder="Order Details" autofocus="autofocus" />
 				</div>
 
-				<div class="form-group input-group">
+				<!-- <div class="form-group input-group">
 				<span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span> 
 					<input type="text" id="itemName" ng-model="item.itemName" size="30"
 						class="form-control" placeholder="Item Name" />
@@ -30,17 +34,62 @@
 					<input type="number" id="itemPrice" ng-model="item.itemPrice"
 						size="30" class="form-control" placeholder="Item Price" /><span
 									class="input-group-addon">.00</span>
+				</div> -->
+				
+				<div class="form-group input-group">
+				<div><input type="checkbox" id="orderAccept" name="orderAccept" ng-model="order.orderAccept" ng-checked="false">&nbsp;&nbsp;Accept Order</div>
+				<div><input type="checkbox" id="activeOrder" name="activeOrder" ng-model="order.activeOrder" ng-checked="false">&nbsp;&nbsp;Active Order</div>
 				</div>
 
              <div align="center">
-				<button class="btn btn-success" ng-click="addItem();">
-					<i class="glyphicon glyphicon-edit icon-white"></i> Update Menu
+				<button class="btn btn-success" ng-click="addOrder();">
+					<i class="glyphicon glyphicon-edit icon-white"></i> Update Order
 				</button> <br/>
 			</div>
 			<br/>
 			</div>
 		</form>
+		</div>
+	<div class="panel-footer">
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<tr>
+				<th>OrderId</th>
+				<th>UserName</th>
+				<th>TokenId</th>
+				<th>CustomerId</th>
+				<th>OrderDetails</th>
+				<th>OrderCreated Date</th>
+				<th>OrderModified Date</th>
+				<th>RestaurantId</th>
+				<th>RestaurantName</th>
+				<th>OrderDate</th>
+				<th>OrderAccept</th>
+				<th>OrderAccept</th>
+				<th>Actions</th>
+			</tr>
+
+			<tr ng-repeat="order in orders">
+				<td>{{ order.orderId}}</td>
+				<td>{{ order.username }}</td>
+				<td>{{ order.tokenId }}</td>
+				<td>{{ order.customerId }}</td>
+				<td>{{ order.orderDetails }}</td>
+				<td>{{ order.createdDate }}</td>
+				<td>{{ order.modifiedDate }}</td>
+				<td>{{ order.restaurantId }}</td>
+				<td>{{ order.restaurantName }}</td>
+				<td>{{ order.orderDate }}</td>
+				<td>{{ order.orderAccept }}</td>
+				<td>{{ order.activeOrder }}</td>
+				<td><a ng-click="editOrder(order)" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+				 <a ng-click="deleteOrder(order)" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></a></td>
+			</tr>
+		</table>
 	</div>
+	</div>
+
+	<br />
 </div>
 
 

@@ -207,6 +207,8 @@
 
 	<script type="text/javascript"
 		src="${contextPath}/resources/js/appjs/releaseVersionController.js"></script>
+<script type="text/javascript"
+		src="${contextPath}/resources/js/appjs/orderHandler.js"></script>
 
 
 

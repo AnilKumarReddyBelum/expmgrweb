@@ -15,13 +15,13 @@ public class OrderBean implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer orderId;
+	private Integer orderId;//AUTO GENERATION
 	@Column
-	private Integer tokenId;
+	private String username;//AUTO POPULATION
 	@Column
-	private Integer customerId;
+	private Integer tokenId;//NOT REQUIRED FROM UI-HTM
 	@Column
-	private Integer restaurantId;
+	private Integer customerId;//NOT REQUIRED FROM UI-HTM
 	@Column
 	private String orderDetails;
 	@Column
@@ -29,11 +29,35 @@ public class OrderBean implements Serializable {
 	@Column
 	private String modifiedDate;
 	@Column
-	private Boolean activeOrder;
+	private Long restaurantId;//AUTO POPULATION
 	@Column
-	private String orderDate;
+	private String restaurantName;//AUTO POPULATION
+	@Column
+	private String orderDate;//NOT REQUIRED FROM UI-HTM
 	@Column
 	private Boolean orderAccept;
+	@Column
+	private Boolean activeOrder;
+
+	public String getRestaurantName() {
+		return restaurantName;
+	}
+
+	public void setRestaurantName(String restaurantName) {
+		this.restaurantName = restaurantName;
+	}
+
+	public void setRestaurantId(Long restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public Integer getOrderId() {
 		return orderId;
@@ -57,14 +81,6 @@ public class OrderBean implements Serializable {
 
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
-	}
-
-	public Integer getRestaurantId() {
-		return restaurantId;
-	}
-
-	public void setRestaurantId(Integer restaurantId) {
-		this.restaurantId = restaurantId;
 	}
 
 	public String getOrderDetails() {

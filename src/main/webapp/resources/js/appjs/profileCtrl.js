@@ -4,11 +4,13 @@ roomExpApp.controller("profileCtrl", function($scope, $http) {
 
 	$scope.updateUserInfoForm = undefined;
 	$scope.profile = {
-		id : "-1",
+		id : undefined,
 		username : username,
-		emailId : "",
-		mobNum : "",
-		address : ""
+		emailId : undefined,
+		mobNum : undefined,
+		address : undefined,
+		restaurantName : undefined,
+		restaurantName : undefined
 	}
 
 	$scope.updateUserInfoForm = function() {

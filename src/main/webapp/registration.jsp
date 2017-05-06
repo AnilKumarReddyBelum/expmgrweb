@@ -39,6 +39,14 @@
                 <form:errors path="username"></form:errors>
             </div>
         </spring:bind>
+        
+        <spring:bind path="restaurantId">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="restaurantId" class="form-control" placeholder="RestaurantId"
+                            autofocus="true"></form:input>
+                <form:errors path="restaurantId"></form:errors>
+            </div>
+        </spring:bind>
 
         <spring:bind path="password">
             <div class="form-group ${status.error ? 'has-error' : ''}">

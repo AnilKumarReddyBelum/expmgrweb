@@ -4,20 +4,24 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.notify.app.model.MenuBean;
+import com.notify.app.model.User;
 import com.notify.app.repo.MenuRep;
+import com.notify.app.repo.UserRepository;
 
-@RestController()
+@RestController
 public class MenuRestController {
 
 	@Autowired
 	private MenuRep menuRep;
+
+	@Autowired
+	private UserRepository userRepository;
 
 	@GetMapping(value = "/menu/items/getMenuItems")
 	public List<MenuBean> getMenuItems() {
@@ -26,6 +30,9 @@ public class MenuRestController {
 
 	@PostMapping(value = "/menu/items/saveMenu")
 	public MenuBean saveMenu(@RequestBody MenuBean menuBean) {
+		final User user = userRepository.findByUsername(getLoggedInUserName());
+		menuBean.setRestaurantId(user.getRestaurantId());
+		menuBean.setRestaurantName(user.getProfile().getRestaurantName());
 		return menuRep.save(menuBean);
 	}
 

@@ -9,11 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class OrderBean implements Serializable{
-	/**
-	 * 
-	 */
+public class OrderBean implements Serializable {
+
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer orderId;
@@ -35,64 +34,83 @@ public class OrderBean implements Serializable{
 	private String orderDate;
 	@Column
 	private Boolean orderAccept;
-	
+
 	public Integer getOrderId() {
 		return orderId;
 	}
+
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
 	}
+
 	public Integer getTokenId() {
 		return tokenId;
 	}
+
 	public void setTokenId(Integer tokenId) {
 		this.tokenId = tokenId;
 	}
+
 	public Integer getCustomerId() {
 		return customerId;
 	}
+
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
+
 	public Integer getRestaurantId() {
 		return restaurantId;
 	}
+
 	public void setRestaurantId(Integer restaurantId) {
 		this.restaurantId = restaurantId;
 	}
+
 	public String getOrderDetails() {
 		return orderDetails;
 	}
+
 	public void setOrderDetails(String orderDetails) {
 		this.orderDetails = orderDetails;
 	}
+
 	public String getCreatedDate() {
 		return createdDate;
 	}
+
 	public void setCreatedDate(String createdDate) {
 		this.createdDate = createdDate;
 	}
+
 	public String getModifiedDate() {
 		return modifiedDate;
 	}
+
 	public void setModifiedDate(String modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
+
 	public Boolean getActiveOrder() {
 		return activeOrder;
 	}
+
 	public void setActiveOrder(Boolean activeOrder) {
 		this.activeOrder = activeOrder;
 	}
+
 	public String getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
+
 	public Boolean getOrderAccept() {
 		return orderAccept;
 	}
+
 	public void setOrderAccept(Boolean orderAccept) {
 		this.orderAccept = orderAccept;
 	}

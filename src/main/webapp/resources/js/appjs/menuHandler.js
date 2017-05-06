@@ -2,7 +2,6 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 
 	var username = document.getElementById('loginUser').value;
 	$scope.user = username;
-
 	$scope.items = [];
 	
 	function formatDate(date) {
@@ -27,10 +26,14 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 		createdDate : formatDate(new Date()),
 		active : undefined,
 		available:undefined,
-		updateDate : undefined
+		updateDate : undefined,
+		restaurantId : undefined,
+		restaurantName : undefined
 	};
 
 	loadingTheMenuItems();
+	
+	
 
 	function loadingTheMenuItems() {
 		$http({
@@ -65,6 +68,7 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 				$scope.item.active = item.active;
 				$scope.item.available = item.available;
 				$scope.item.updateDate = formatDate(new Date());
+				$scope.item.restaurantId = item.restaurantId;
 	}
 	
 	$scope.deleteItem = function(item) {
@@ -81,12 +85,12 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 		  }
 
 	function reset() {
-		$scope.item.itemId = null;
-	    $scope.item.itemDescription = "";
-		$scope.item.itemName = ""; 
-		$scope.item.itemPrice = "";
-		$scope.item.active = ""; 
-		$scope.item.available = "";
+		$scope.item.itemId = undefined;
+	    $scope.item.itemDescription = undefined;
+		$scope.item.itemName = undefined; 
+		$scope.item.itemPrice = undefined;
+		$scope.item.active = undefined; 
+		$scope.item.available = undefined;
 	}
 
 	

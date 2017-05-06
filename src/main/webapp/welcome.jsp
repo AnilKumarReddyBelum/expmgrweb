@@ -136,24 +136,25 @@
 								<li><a href="#viewUserProfile">View User Profile</a></li>
 							</ul></li>
 
-								
-								<li><a href="#menu"><i class="fa fa-pencil fa-fw"></i>
-								Menu</a></li>
-								
-								
-								<li><a href="#order"><i class="fa fa-book fa-fw"></i>
-								Order</a></li>
-								
-								<li><a href="#notify"><i class="fa fa-bell fa-fw"></i>
-								Notify</a></li>
-								
-								
-								
-								<li><a href="#release"><i class="glyphicon glyphicon-th-list"></i>
-								&nbsp;Release Version Info</a></li>
-								
 
-						
+						<li><a href="#menu"><i class="fa fa-pencil fa-fw"></i>
+								Menu</a></li>
+
+
+						<li><a href="#order"><i class="fa fa-book fa-fw"></i>
+								Order</a></li>
+
+						<!-- 	<li><a href="#notify"><i class="fa fa-bell fa-fw"></i>
+								Notify</a></li>
+								 -->
+
+
+						<li><a href="#release"><i
+								class="glyphicon glyphicon-th-list"></i> &nbsp;Release Version
+								Info</a></li>
+
+
+
 					</ul>
 				</div>
 				<!-- /.sidebar-collapse -->
@@ -179,8 +180,7 @@
 	<script src="${contextPath}/resources/js/libs/ng-grid/ng-grid.min.js"></script>
 	<script
 		src="${contextPath}/resources/js/libs/angular/angular-route.min.js"></script>
-	<script
-		src="${contextPath}/resources/js/bootstrap.min.js"></script>
+	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 	<script
 		src="${contextPath}/resources/js/libs/metisMenu/src/metisMenu.js"></script>
 	<script src="${contextPath}/resources/js/libs/sb-admin-2/sb-admin-2.js"></script>
@@ -205,7 +205,7 @@
 	<script type="text/javascript"
 		src="${contextPath}/resources/js/appjs/menuHandler.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="${contextPath}/resources/js/appjs/releaseVersionController.js"></script>
 
 

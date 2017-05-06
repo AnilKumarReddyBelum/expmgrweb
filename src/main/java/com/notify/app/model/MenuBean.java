@@ -10,10 +10,9 @@ import javax.persistence.Id;
 
 @Entity
 public class MenuBean implements Serializable {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer itemId;
@@ -26,13 +25,21 @@ public class MenuBean implements Serializable {
 	@Column
 	private String updateDate;
 	@Column
-	private String modifiedDate;
-	@Column
 	private Boolean active;
 	@Column
 	private Integer itemPrice;
 	@Column
-	private Integer restaurantId;
+	private Long restaurantId;
+	@Column
+	private String restaurantName;
+
+	public String getRestaurantName() {
+		return restaurantName;
+	}
+
+	public void setRestaurantName(String restaurantName) {
+		this.restaurantName = restaurantName;
+	}
 
 	public String getUpdateDate() {
 		return updateDate;
@@ -88,14 +95,6 @@ public class MenuBean implements Serializable {
 		this.createdDate = createdDate;
 	}
 
-	public String getModifiedDate() {
-		return modifiedDate;
-	}
-
-	public void setModifiedDate(String modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
-
 	public Boolean getActive() {
 		return active;
 	}
@@ -112,11 +111,11 @@ public class MenuBean implements Serializable {
 		this.itemPrice = itemPrice;
 	}
 
-	public Integer getRestaurantId() {
+	public Long getRestaurantId() {
 		return restaurantId;
 	}
 
-	public void setRestaurantId(Integer restaurantId) {
+	public void setRestaurantId(Long restaurantId) {
 		this.restaurantId = restaurantId;
 	}
 

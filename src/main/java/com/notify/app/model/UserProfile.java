@@ -12,16 +12,12 @@ import javax.persistence.Table;
 @Table
 public class UserProfile implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -856034458074377702L;
 
 	@Id
 	@GeneratedValue
-	@Column(name="PROFILE_ID")
+	@Column(name = "PROFILE_ID")
 	private Long id;
-	
 	@Column
 	private String username;
 	@Column
@@ -30,8 +26,27 @@ public class UserProfile implements Serializable {
 	private String mobNum;
 	@Column
 	private String address;
-	
-	
+	@Column
+	private Long restaurantId;
+	@Column
+	private String restaurantName;
+
+	public Long getRestaurantId() {
+		return restaurantId;
+	}
+
+	public void setRestaurantId(Long restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+
+	public String getRestaurantName() {
+		return restaurantName;
+	}
+
+	public void setRestaurantName(String restaurantName) {
+		this.restaurantName = restaurantName;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -72,5 +87,4 @@ public class UserProfile implements Serializable {
 		this.address = address;
 	}
 
-	
 }

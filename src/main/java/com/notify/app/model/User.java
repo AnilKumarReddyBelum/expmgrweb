@@ -15,21 +15,20 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="NotifyUser")
+@Table(name = "NotifyUser")
 public class User implements Serializable {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 5779549556778584873L;
-	
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "USER_ID")
 	private Long id;
 	@Column
 	private String username;
+	@Column
+	private Long restaurantId;
 	@Column
 	private String password;
 	@Column
@@ -42,10 +41,16 @@ public class User implements Serializable {
 	@ManyToMany
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
-	
-	
-	
-	public User(UserProfile profile){
+
+	public Long getRestaurantId() {
+		return restaurantId;
+	}
+
+	public void setRestaurantId(Long restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+
+	public User(UserProfile profile) {
 		this.profile = profile;
 	}
 

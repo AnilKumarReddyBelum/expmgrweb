@@ -56,6 +56,7 @@ public class UserController {
 		set.add(role);
 		userForm.setRoles(set);
 		profile.setUsername(userForm.getUsername());
+		profile.setRestaurantId(userForm.getRestaurantId());
 		userForm.setProfile(profile);
 		userService.save(userForm);
 		securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());

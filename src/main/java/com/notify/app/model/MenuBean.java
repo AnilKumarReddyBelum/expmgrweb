@@ -24,6 +24,8 @@ public class MenuBean implements Serializable {
 	@Column
 	private String createdDate;
 	@Column
+	private String updateDate;
+	@Column
 	private String modifiedDate;
 	@Column
 	private Boolean active;
@@ -31,6 +33,15 @@ public class MenuBean implements Serializable {
 	private Integer itemPrice;
 	@Column
 	private Integer restaurantId;
+
+	public String getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(String updateDate) {
+		this.updateDate = updateDate;
+	}
+
 	@Column
 	private Boolean available;
 

@@ -26,7 +26,8 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 		username : username,
 		createdDate : formatDate(new Date()),
 		active : undefined,
-		available:undefined 
+		available:undefined,
+		updateDate : undefined
 	};
 
 	loadingTheMenuItems();
@@ -51,7 +52,6 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 			},
 			data : angular.toJson($scope.item)
 		}).then().success(function(data){
-			//$scope.items = data;
 			loadingTheMenuItems();
 			reset();
 		});
@@ -64,6 +64,7 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 				$scope.item.itemPrice = item.itemPrice;
 				$scope.item.active = item.active;
 				$scope.item.available = item.available;
+				$scope.item.updateDate = formatDate(new Date());
 	}
 	
 	$scope.deleteItem = function(item) {

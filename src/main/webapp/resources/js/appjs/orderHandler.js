@@ -4,6 +4,11 @@ roomExpApp.controller("ordersController", function($scope, $http) {
 	$scope.user = username;
 	$scope.orders = [];
 	
+	//Button Processing Feature
+	$scope.orderProcessingText = 'ProcessTheOrder';
+	$scope.test = true;
+	
+	
 	function formatDate(date) {
 	    var d = new Date(date),
 	        month = '' + (d.getMonth() + 1),
@@ -48,6 +53,9 @@ roomExpApp.controller("ordersController", function($scope, $http) {
 	}
 
 	$scope.addOrder = function() {
+		$scope.enable = 'false';
+        $scope.test = 'true';
+        $scope.orderProcessingText = 'Processing';
 		$http({
 			method : 'POST',
 			url : '/order/createOrder',
@@ -56,6 +64,8 @@ roomExpApp.controller("ordersController", function($scope, $http) {
 			},
 			data : angular.toJson($scope.order)
 		}).then().success(function(data){
+			 $scope.enable = 'true';
+	         $scope.orderProcessingText = 'ProcessTheOrder';
 			loadingTheOrders();
 			reset();
 		});

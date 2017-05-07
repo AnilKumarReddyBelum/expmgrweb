@@ -41,12 +41,28 @@
 				<div><input type="checkbox" id="activeOrder" name="activeOrder" ng-model="order.activeOrder" ng-checked="false">&nbsp;&nbsp;Active Order</div>
 				</div>
 
-             <div align="center">
+           <!--   <div align="center">
 				<button class="btn btn-success" ng-click="addOrder();">
 					<i class="glyphicon glyphicon-book icon-white"></i> Update Order
 				</button> <br/>
-			</div>
+			</div> -->
 			<br/>
+			
+			
+				<div align="center">
+				 <div>
+        			<button class="btn btn-success" ng-click="addOrder();" ng-disabled="enable=='false'" id="updteOrder"> 
+            			<span ng-show="orderProcessingText == 'Processing'"><i class="fa fa-spinner fa-spin "></i></span>
+            			{{ orderProcessingText }}
+        			</button>
+        			<br/>
+    			</div>
+			
+			<br/>
+			</div>
+			
+			
+			
 			</div>
 		</form>
 		</div>

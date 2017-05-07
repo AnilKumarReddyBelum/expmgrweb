@@ -4,6 +4,10 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 	$scope.user = username;
 	$scope.items = [];
 	
+	//Button Processing Feature
+	$scope.menuItemCreationText = 'UpdateMenu';
+	$scope.test = true;
+	
 	function formatDate(date) {
 	    var d = new Date(date),
 	        month = '' + (d.getMonth() + 1),
@@ -47,6 +51,9 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 	}
 
 	$scope.addItem = function() {
+		    $scope.enable = 'false';
+	        $scope.test = 'true';
+	        $scope.menuItemCreationText = 'Updating';
 		$http({
 			method : 'POST',
 			url : '/menu/items/saveMenu',
@@ -55,6 +62,8 @@ roomExpApp.controller("menuItemsController", function($scope, $http) {
 			},
 			data : angular.toJson($scope.item)
 		}).then().success(function(data){
+			 $scope.enable = 'true';
+	         $scope.menuItemCreationText = 'UpdateNotification';
 			loadingTheMenuItems();
 			reset();
 		});

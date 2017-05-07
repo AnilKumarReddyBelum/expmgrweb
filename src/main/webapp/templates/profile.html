@@ -64,10 +64,26 @@
 				</div>
 
 
-				<div align="center">
+				<!-- <div align="center">
 						<button type="submit"  class="btn btn-success"><i class="fa fa-user fa-fw"></i> Update User Profile</button>
 				</div>
-	
+	 -->
+	 
+	 
+			<div align="center">
+				 <div>
+        			<button class="btn btn-success"  ng-disabled="enable=='false'" id="updateProfile"> 
+            			<span ng-show="updateProfile == 'Updating'"><i class="fa fa-spinner fa-spin "></i></span>
+            			{{ updateProfile }}
+        			</button>
+        			<br/>
+    			</div>
+			
+			<br/>
+			</div>
+	 
+	 
+	 
 				<br/>
 
 			</form>

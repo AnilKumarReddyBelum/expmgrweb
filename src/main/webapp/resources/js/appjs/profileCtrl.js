@@ -3,6 +3,13 @@ roomExpApp.controller("profileCtrl", function($scope, $http) {
 	var username = document.getElementById('loginUser').value;
 
 	$scope.updateUserInfoForm = undefined;
+	
+	
+	//Button Processing Feature
+	$scope.updateProfile = 'UpdateProfile';
+	$scope.test = true;
+	
+	
 	$scope.profile = {
 		id : undefined,
 		username : username,
@@ -14,7 +21,9 @@ roomExpApp.controller("profileCtrl", function($scope, $http) {
 	}
 
 	$scope.updateUserInfoForm = function() {
-		console.log(username);
+		 $scope.enable = 'false';
+	        $scope.test = 'true';
+	        $scope.updateProfile = 'Updating';
 		$http({
 			method : 'PUT',
 			url : '/updateProfile',
@@ -44,12 +53,14 @@ roomExpApp.controller("profileCtrl", function($scope, $http) {
 	
 
 	function _success(response) {
-		console.log(response.statusText);
+		 $scope.enable = 'true';
+         $scope.updateProfile = 'UpdateProfile';
 		alert("success : " + response.statusText);
 	}
 
 	function _error(response) {
-		console.log(response.statusText);
+		 $scope.enable = 'true';
+         $scope.updateProfile = 'UpdateProfile';
 		alert("error : " + response.statusText);
 	}
 

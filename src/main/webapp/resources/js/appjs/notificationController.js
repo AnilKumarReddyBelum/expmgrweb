@@ -4,6 +4,10 @@ roomExpApp.controller("notificatonManagerController", function($scope, $http) {
 	$scope.user = username;
 	$scope.notifications = [];
 	
+	//Button Processing Feature
+	$scope.sendNotificationText = 'UpdateNotification';
+	$scope.test = true;
+	
 	function formatDate(date) {
 	    var d = new Date(date),
 	        month = '' + (d.getMonth() + 1),
@@ -44,6 +48,9 @@ roomExpApp.controller("notificatonManagerController", function($scope, $http) {
 	}
 
 	$scope.addNotification = function() {
+		    $scope.enable = 'false';
+	        $scope.test = 'true';
+	        $scope.sendNotificationText = 'Updating';
 		$http({
 			method : 'POST',
 			url : '/notifications/saveNotification',
@@ -52,6 +59,8 @@ roomExpApp.controller("notificatonManagerController", function($scope, $http) {
 			},
 			data : angular.toJson($scope.notification)
 		}).then().success(function(data){
+			 $scope.enable = 'true';
+	         $scope.sendNotificationText = 'UpdateNotification';
 			loadingTheNotifications();
 			reset();
 		});

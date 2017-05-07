@@ -30,9 +30,14 @@
 				</div>
 
              <div align="center">
-				<button class="btn btn-success" ng-click="addNotification();">
-					<i class="glyphicon glyphicon-comment icon-white"></i> Update Notification
-				</button> <br/>
+				 <div>
+        			<button class="btn btn-success" ng-click="addNotification();" ng-disabled="enable=='false'" id="updateNotification"> 
+            			<span ng-show="sendNotificationText == 'Updating'"><i class="fa fa-refresh fa-spin"></i></span>
+            			{{ sendNotificationText }}
+        			</button>
+    			</div>
+				
+				<br/>
 			</div>
 			<br/>
 			</div>

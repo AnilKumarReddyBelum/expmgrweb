@@ -64,3 +64,8 @@ Email: <input type="text" name="email" id="emailId">
 </body>
 
 </html>
+
+
+***************************
+http://emailregex.com/
+***************************

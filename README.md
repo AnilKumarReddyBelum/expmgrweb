@@ -1,1 +1,1 @@
-Manages your Expeses easly.
+Manages your Expenses easly.
